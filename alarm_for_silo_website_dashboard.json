@@ -1,0 +1,393 @@
+{
+  "ruleChain": {
+    "additionalInfo": {
+      "description": ""
+    },
+    "name": "Alarm for silo website dashboard",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": false,
+    "configuration": null
+  },
+  "metadata": {
+    "firstNodeIndex": 10,
+    "nodes": [
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 596,
+          "layoutY": 522
+        },
+        "type": "org.thingsboard.rule.engine.action.TbClearAlarmNode",
+        "name": "Boiler-Water-Alarm",
+        "debugMode": false,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "alarmType": "Silo humidity is high!"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 596,
+          "layoutY": 428
+        },
+        "type": "org.thingsboard.rule.engine.action.TbClearAlarmNode",
+        "name": "Boiler-Water-Alarm",
+        "debugMode": false,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "alarmType": "Silo humidity is low!"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 288,
+          "layoutY": 480
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "Silo C",
+        "debugMode": false,
+        "configuration": {
+          "jsScript": "return msg.Weight_C >=53 && msg.Weight_C <=57;"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 593,
+          "layoutY": 476
+        },
+        "type": "org.thingsboard.rule.engine.action.TbCreateAlarmNode",
+        "name": "Weight_Alarm",
+        "debugMode": false,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {\n    \tWeight_C: msg.Weight_C\n};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "useMessageAlarmData": false,
+          "alarmType": "Silo humidity is high!",
+          "severity": "CRITICAL",
+          "propagate": false,
+          "relationTypes": []
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 808,
+          "layoutY": 299
+        },
+        "type": "org.thingsboard.rule.engine.action.TbCreateAlarmNode",
+        "name": "Weight-Alarm",
+        "debugMode": false,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {\n    \tWeight_B: msg.Weight_B\n};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "useMessageAlarmData": false,
+          "alarmType": "Silo temperature is low!",
+          "severity": "WARNING",
+          "propagate": false,
+          "relationTypes": []
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 806,
+          "layoutY": 348
+        },
+        "type": "org.thingsboard.rule.engine.action.TbClearAlarmNode",
+        "name": "Boiler-Water-Alarm",
+        "debugMode": false,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "alarmType": "Silo temperature is low!"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 537,
+          "layoutY": 293
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "Silo B",
+        "debugMode": false,
+        "configuration": {
+          "jsScript": "return msg.Weight_B >=54 && msg.Weight_B <=56;"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 339,
+          "layoutY": 136
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "Silo A",
+        "debugMode": false,
+        "configuration": {
+          "jsScript": "return msg.Weight_A >=55 && msg.Weight_A <=60;"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 581,
+          "layoutY": 106
+        },
+        "type": "org.thingsboard.rule.engine.action.TbCreateAlarmNode",
+        "name": "Weight-Alarm",
+        "debugMode": false,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {\n    \tWeight_A: msg.Weight_A\n};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "useMessageAlarmData": false,
+          "alarmType": "Silo humidity is high!",
+          "severity": "WARNING",
+          "propagate": false,
+          "relationTypes": []
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 583,
+          "layoutY": 155
+        },
+        "type": "org.thingsboard.rule.engine.action.TbClearAlarmNode",
+        "name": "Weight-Alarm",
+        "debugMode": false,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "alarmType": "Silo humidity is high!"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 48,
+          "layoutY": 274
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsSwitchNode",
+        "name": "by type",
+        "debugMode": false,
+        "configuration": {
+          "jsScript": "function nextRelation(metadata, msg){\n        \tif (metadata.dataType === 'Weight_1'){\n        \t\treturn ['route-1'];\n        \t}else if (metadata.dataType === 'Weight_2'){\n        \t\treturn ['route-2'];\n        \t}else if (metadata.dataType === 'Weight_3'){\n        \t    return ['route-3'];\n        \t}\n        }\n        \n        return nextRelation(metadata, msg);\n        \n        \n    "
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 340,
+          "layoutY": 73
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "Silo A",
+        "debugMode": false,
+        "configuration": {
+          "jsScript": "return msg.Weight_A >=50 && msg.Weight_A <=54;"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 539,
+          "layoutY": 244
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "Silo B",
+        "debugMode": false,
+        "configuration": {
+          "jsScript": "return msg.Weight_B >=50 && msg.Weight_B <=53;"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 287,
+          "layoutY": 415
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbJsFilterNode",
+        "name": "Silo C",
+        "debugMode": false,
+        "configuration": {
+          "jsScript": "return msg.Weight_C >=50 && msg.Weight_C <=52;"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 593,
+          "layoutY": 381
+        },
+        "type": "org.thingsboard.rule.engine.action.TbCreateAlarmNode",
+        "name": "Weight_Alarm",
+        "debugMode": false,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {\n    \tWeight_C: msg.Weight_C\n};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "useMessageAlarmData": false,
+          "alarmType": "Silo humidity is low!",
+          "severity": "WARNING",
+          "propagate": false,
+          "relationTypes": []
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 805,
+          "layoutY": 249
+        },
+        "type": "org.thingsboard.rule.engine.action.TbClearAlarmNode",
+        "name": "Boiler-Water-Alarm",
+        "debugMode": false,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "alarmType": "Silo temperature is high!"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 805,
+          "layoutY": 202
+        },
+        "type": "org.thingsboard.rule.engine.action.TbCreateAlarmNode",
+        "name": "Weight-Alarm",
+        "debugMode": false,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {\n    \tWeight_B: msg.Weight_B\n};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "useMessageAlarmData": false,
+          "alarmType": "Silo temperature is high!",
+          "severity": "CRITICAL",
+          "propagate": false,
+          "relationTypes": []
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 583,
+          "layoutY": 58
+        },
+        "type": "org.thingsboard.rule.engine.action.TbClearAlarmNode",
+        "name": "Weight-Alarm",
+        "debugMode": false,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "alarmType": "Silo Temperature is normal!"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 585,
+          "layoutY": 9
+        },
+        "type": "org.thingsboard.rule.engine.action.TbCreateAlarmNode",
+        "name": "Weight-Alarm",
+        "debugMode": false,
+        "configuration": {
+          "alarmDetailsBuildJs": "var details = {\n    \tWeight_A: msg.Weight_A\n};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n}\nreturn details;",
+          "useMessageAlarmData": false,
+          "alarmType": "Silo Temperature is normal!",
+          "severity": "INDETERMINATE",
+          "propagate": false,
+          "relationTypes": []
+        }
+      }
+    ],
+    "connections": [
+      {
+        "fromIndex": 2,
+        "toIndex": 3,
+        "type": "True"
+      },
+      {
+        "fromIndex": 2,
+        "toIndex": 0,
+        "type": "False"
+      },
+      {
+        "fromIndex": 6,
+        "toIndex": 4,
+        "type": "True"
+      },
+      {
+        "fromIndex": 6,
+        "toIndex": 5,
+        "type": "False"
+      },
+      {
+        "fromIndex": 7,
+        "toIndex": 8,
+        "type": "True"
+      },
+      {
+        "fromIndex": 7,
+        "toIndex": 9,
+        "type": "False"
+      },
+      {
+        "fromIndex": 10,
+        "toIndex": 12,
+        "type": "route-2"
+      },
+      {
+        "fromIndex": 10,
+        "toIndex": 13,
+        "type": "route-3"
+      },
+      {
+        "fromIndex": 10,
+        "toIndex": 11,
+        "type": "route-1"
+      },
+      {
+        "fromIndex": 10,
+        "toIndex": 7,
+        "type": "route-1"
+      },
+      {
+        "fromIndex": 10,
+        "toIndex": 6,
+        "type": "route-2"
+      },
+      {
+        "fromIndex": 10,
+        "toIndex": 2,
+        "type": "route-3"
+      },
+      {
+        "fromIndex": 11,
+        "toIndex": 18,
+        "type": "True"
+      },
+      {
+        "fromIndex": 11,
+        "toIndex": 17,
+        "type": "False"
+      },
+      {
+        "fromIndex": 12,
+        "toIndex": 16,
+        "type": "True"
+      },
+      {
+        "fromIndex": 12,
+        "toIndex": 15,
+        "type": "False"
+      },
+      {
+        "fromIndex": 13,
+        "toIndex": 14,
+        "type": "True"
+      },
+      {
+        "fromIndex": 13,
+        "toIndex": 1,
+        "type": "False"
+      }
+    ],
+    "ruleChainConnections": null
+  }
+}

@@ -1,0 +1,609 @@
+{
+  "ruleChain": {
+    "additionalInfo": {
+      "description": ""
+    },
+    "name": "Data for website dashboards",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": false,
+    "configuration": null
+  },
+  "metadata": {
+    "firstNodeIndex": null,
+    "nodes": [
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 231,
+          "layoutY": 9
+        },
+        "type": "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode",
+        "name": "Frequency",
+        "debugMode": false,
+        "configuration": {
+          "msgCount": 0,
+          "periodInSeconds": 300,
+          "jsScript": "var msg = {\n// Energy_Meter_Voltage_A: (230 + (Math.random() * 15)).toFixed(2),\n// Energy_Meter_Voltage_B: (224 + (Math.random() * 12)).toFixed(2),\n// Energy_Meter_Voltage_C: (215 + (Math.random() * 10)).toFixed(2),\nEnergy_Meter_Frequency_A: (50 + (Math.random() * 1)).toFixed(2),\nEnergy_Meter_Frequency_B: (49 + (Math.random() * 1)).toFixed(2),\nEnergy_Meter_Frequency_C: (49 + (Math.random() * 1)).toFixed(2)\n};\nvar metadata = {dataType : \"em_K_RA\"};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+          "originatorId": "94667690-9cec-11eb-9aa3-49a56be88c61",
+          "originatorType": "DEVICE"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 36,
+          "layoutY": 48
+        },
+        "type": "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode",
+        "name": "Current-Amperage-Data",
+        "debugMode": false,
+        "configuration": {
+          "msgCount": 0,
+          "periodInSeconds": 300,
+          "jsScript": "var precision = 100; // 2 decimals\r\nvar randomnum = Math.floor(Math.random() * (3 * precision - 1 * precision) + 1 * precision) / (1*precision);\r\nvar msg = { \r\n\r\nEnergy_Meter_Power_A:Math.floor(Math.random() * (55 * precision - 1 * precision) + 1 * precision) / (1*precision),\r\n\r\nEnergy_Meter_Power_B:Math.floor(Math.random() * (35 * precision - 1 * precision) + 1 * precision) / (1*precision),\r\n\r\nEnergy_Meter_Power_C:Math.floor(Math.random() * (15 * precision - 1 * precision) + 1 * precision) / (1*precision),\r\n\r\n// data_EM5_Power:Math.floor(Math.random() * (10 * precision - 1 * precision) + 1 * precision) / (1*precision),\r\n\r\n };\r\nvar metadata = { data: 20, deviceName: 'Energy Meter Sensor Targoviste' };\r\nvar msgType = \"POST_TELEMETRY_REQUEST\";\r\n\r\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+          "originatorId": "94667690-9cec-11eb-9aa3-49a56be88c61",
+          "originatorType": "DEVICE"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 37,
+          "layoutY": 4
+        },
+        "type": "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode",
+        "name": "Energy-Consumtion-Data",
+        "debugMode": false,
+        "configuration": {
+          "msgCount": 0,
+          "periodInSeconds": 300,
+          "jsScript": "var precision = 100; // 2 decimals\r\nvar randomnum = Math.floor(Math.random() * (3 * precision - 1 * precision) + 1 * precision) / (1*precision);\r\nvar msg = { \r\n\r\nEnergy_Meter_A: Math.floor(Math.random() * (10 * precision - 1 * precision) + 1 * precision) / (1*precision),\r\n\r\nEnergy_Meter_B: Math.floor(Math.random() * (10 * precision - 1 * precision) + 1 * precision) / (1*precision),\r\n\r\nEnergy_Meter_C: Math.floor(Math.random() * (10 * precision - 1 * precision) + 1 * precision) / (1*precision),\r\n\r\n };\r\nvar metadata = { data: 20, deviceName: 'Energy Meter Sensor Targoviste' };\r\nvar msgType = \"POST_TELEMETRY_REQUEST\";\r\n\r\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+          "originatorId": "94667690-9cec-11eb-9aa3-49a56be88c61",
+          "originatorType": "DEVICE"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 37,
+          "layoutY": 95
+        },
+        "type": "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode",
+        "name": "Voltage",
+        "debugMode": false,
+        "configuration": {
+          "msgCount": 0,
+          "periodInSeconds": 300,
+          "jsScript": "var msg = {Energy_Meter_Voltage_A: (230 + (Math.random() * 15)).toFixed(2),\nEnergy_Meter_Voltage_B: (224 + (Math.random() * 12)).toFixed(2),\nEnergy_Meter_Voltage_C: (215 + (Math.random() * 10)).toFixed(2),\n// Energy_Meter_Frequency_A: (50 + (Math.random() * 1)).toFixed(2),\n// Energy_Meter_Frequency_B: (49 + (Math.random() * 1)).toFixed(2),\n// Energy_Meter_Frequency_C: (49 + (Math.random() * 1)).toFixed(2)\n};\nvar metadata = {dataType : \"em_K_RA\"};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+          "originatorId": "94667690-9cec-11eb-9aa3-49a56be88c61",
+          "originatorType": "DEVICE"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 337,
+          "layoutY": 428
+        },
+        "type": "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode",
+        "name": "Bucharest District",
+        "debugMode": false,
+        "configuration": {
+          "msgCount": 0,
+          "periodInSeconds": 300,
+          "jsScript": "var max = 300;\nvar min = 50;\nvar msg = {Energy_Consumption : (Math.random() * (max - min) + min).toFixed(3),\n    Water_Consumption : (Math.random() * (max - min) + min).toFixed(3),\n};\nvar metadata = {dataType : \"occupancy\"};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+          "originatorId": "f33f49a0-9cef-11eb-9aa3-49a56be88c61",
+          "originatorType": "ASSET"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 331,
+          "layoutY": 375
+        },
+        "type": "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode",
+        "name": "Craiova District",
+        "debugMode": false,
+        "configuration": {
+          "msgCount": 0,
+          "periodInSeconds": 300,
+          "jsScript": "var max = 500;\nvar min = 100;\nvar msg = {Water_Consumption : (Math.random() * (max - min) + min).toFixed(3),\n    Energy_Consumption : (Math.random() * (max - min) + min).toFixed(3)\n};\nvar metadata = {dataType : \"occupancy\"};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+          "originatorId": "ea235d70-9e84-11eb-9aa3-49a56be88c61",
+          "originatorType": "ASSET"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 754,
+          "layoutY": 257
+        },
+        "type": "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode",
+        "name": "Bus A",
+        "debugMode": false,
+        "configuration": {
+          "msgCount": 0,
+          "periodInSeconds": 300,
+          "jsScript": "var msg = {Bus_A_Speed: (25 + 7 * Math.random()).toFixed(1),\n    // Bus_B_Speed: (30 + 10 * Math.random()).toFixed(1),\n    // Bus_C_Speed: (35 + 10 * Math.random()).toFixed(1),\n    // Bus_D_Speed: (40 + 5 * Math.random()).toFixed(1),\n    Bus_A_Fuel: (40 + 7 * Math.random()).toFixed(1),\n    Status: \"On route\",\n    latitude: (44 + 1 * Math.random()). toFixed(5),\n    longitude: (23 + 1 * Math.random()).toFixed(5),\n};\nvar metadata = {dataType : \"Bus_Speed_A\"};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+          "originatorId": "eb617dc0-0a27-11ec-9fc0-d7ec4e17a89a",
+          "originatorType": "DEVICE"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 756,
+          "layoutY": 305
+        },
+        "type": "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode",
+        "name": "Bus B",
+        "debugMode": false,
+        "configuration": {
+          "msgCount": 0,
+          "periodInSeconds": 300,
+          "jsScript": "var msg = {\n    // Bus_A_Speed: (25 + 7 * Math.random()).toFixed(1),\n    Bus_B_Speed: (30 + 10 * Math.random()).toFixed(1),\n    // Bus_C_Speed: (35 + 10 * Math.random()).toFixed(1),\n    // Bus_D_Speed: (40 + 5 * Math.random()).toFixed(1),\n    Bus_B_Fuel: (10 + 10 * Math.random()).toFixed(1),\n    Status: \"Broken\",\n    latitude: (44 + 1 * Math.random()). toFixed(5),\n    longitude: (26 + 2 * Math.random()).toFixed(5),\n};\nvar metadata = {dataType : \"Bus_Speed_B\"};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+          "originatorId": "f2f88ba0-0a27-11ec-9fc0-d7ec4e17a89a",
+          "originatorType": "DEVICE"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 756,
+          "layoutY": 404
+        },
+        "type": "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode",
+        "name": "Bus D",
+        "debugMode": false,
+        "configuration": {
+          "msgCount": 0,
+          "periodInSeconds": 300,
+          "jsScript": "var msg = {\n    // Bus_A_Speed: (25 + 7 * Math.random()).toFixed(1),\n    // Bus_B_Speed: (30 + 10 * Math.random()).toFixed(1),\n    // Bus_C_Speed: (35 + 10 * Math.random()).toFixed(1),\n    Bus_D_Speed: (40 + 5 * Math.random()).toFixed(1),\n    Bus_D_Fuel: (25 + 5 * Math.random()).toFixed(1),\n    Status: \"On route\",\n    latitude: (44 + 1 * Math.random()). toFixed(5),\n    longitude: (22 + 1 * Math.random()).toFixed(5),\n};\nvar metadata = {dataType : \"Bus_Speed_D\"};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+          "originatorId": "0127d500-0a28-11ec-9fc0-d7ec4e17a89a",
+          "originatorType": "DEVICE"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 756,
+          "layoutY": 355
+        },
+        "type": "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode",
+        "name": "Bus C",
+        "debugMode": false,
+        "configuration": {
+          "msgCount": 0,
+          "periodInSeconds": 300,
+          "jsScript": "var msg = {\n    // Bus_A_Speed: (25 + 7 * Math.random()).toFixed(1),\n    // Bus_B_Speed: (30 + 10 * Math.random()).toFixed(1),\n    Bus_C_Speed: (35 + 10 * Math.random()).toFixed(1),\n    // Bus_D_Speed: (40 + 5 * Math.random()).toFixed(1),\n    Bus_C_Fuel: (50 + 10 * Math.random()).toFixed(1),\n    Status: \"Refueling\",\n    latitude: (44 + 1 * Math.random()). toFixed(5),\n    longitude: (25 + 1* Math.random()).toFixed(5),\n};\nvar metadata = {dataType : \"Bus_Speed_C\"};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+          "originatorId": "fc8f1300-0a27-11ec-9fc0-d7ec4e17a89a",
+          "originatorType": "DEVICE"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 749,
+          "layoutY": 152
+        },
+        "type": "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode",
+        "name": "Bus Speed Tracking",
+        "debugMode": false,
+        "configuration": {
+          "msgCount": 0,
+          "periodInSeconds": 300,
+          "jsScript": "var msg = {Bus_A_Speed: (25 + 7 * Math.random()).toFixed(1),\n    Bus_B_Speed: (30 + 10 * Math.random()).toFixed(1),\n    Bus_C_Speed: (35 + 10 * Math.random()).toFixed(1),\n    Bus_D_Speed: (40 + 5 * Math.random()).toFixed(1),\n};\nvar metadata = {dataType : \"Bus_Speed\"};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+          "originatorId": "e3cb0f10-9ced-11eb-9aa3-49a56be88c61",
+          "originatorType": "DEVICE"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 750,
+          "layoutY": 203
+        },
+        "type": "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode",
+        "name": "Fuel Level Tracking",
+        "debugMode": false,
+        "configuration": {
+          "msgCount": 0,
+          "periodInSeconds": 300,
+          "jsScript": "var msg = {Bus_A_Fuel: (40 + 7 * Math.random()).toFixed(1),\n    Bus_B_Fuel: (10 + 10 * Math.random()).toFixed(1),\n    Bus_C_Fuel: (50 + 10 * Math.random()).toFixed(1),\n    Bus_D_Fuel: (25 + 5 * Math.random()).toFixed(1),\n};\nvar metadata = {dataType : \"Bus_Fuel\"};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+          "originatorId": "e3cb0f10-9ced-11eb-9aa3-49a56be88c61",
+          "originatorType": "DEVICE"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 53,
+          "layoutY": 426
+        },
+        "type": "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode",
+        "name": "Soil Weights Alarm B",
+        "debugMode": false,
+        "configuration": {
+          "msgCount": 0,
+          "periodInSeconds": 270,
+          "jsScript": "var msg = {Weight_B: (50 + 7 * Math.random()).toFixed(1),\n};\nvar metadata = {dataType : \"Weight_2\"};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+          "originatorId": "05371130-0963-11ec-9fc0-d7ec4e17a89a",
+          "originatorType": "DEVICE"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 49,
+          "layoutY": 477
+        },
+        "type": "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode",
+        "name": "Soil Weights Alarm C",
+        "debugMode": false,
+        "configuration": {
+          "msgCount": 0,
+          "periodInSeconds": 250,
+          "jsScript": "var msg = {Weight_C: (50 + 7 * Math.random()).toFixed(1),\n};\nvar metadata = {dataType : \"Weight_3\"};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+          "originatorId": "0a836bc0-0963-11ec-9fc0-d7ec4e17a89a",
+          "originatorType": "DEVICE"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 51,
+          "layoutY": 377
+        },
+        "type": "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode",
+        "name": "Soil Weights Alarm A",
+        "debugMode": false,
+        "configuration": {
+          "msgCount": 0,
+          "periodInSeconds": 300,
+          "jsScript": "var msg = {Weight_A: (50 + 10 * Math.random()).toFixed(1),\n};\nvar metadata = {dataType : \"Weight_1\"};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+          "originatorId": "feb6ca80-0962-11ec-9fc0-d7ec4e17a89a",
+          "originatorType": "DEVICE"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 51,
+          "layoutY": 324
+        },
+        "type": "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode",
+        "name": "Soil Weights C",
+        "debugMode": false,
+        "configuration": {
+          "msgCount": 0,
+          "periodInSeconds": 300,
+          "jsScript": "var msg = {Soil_Temperature_C: (15 + 7 * Math.random()).toFixed(1),\n    Soil_Humidity_C: (35 + 10 * Math.random()).toFixed(1),\n    Soil_Weight_C: (55 + 10 * Math.random()).toFixed(1),\n};\nvar metadata = {dataType : \"Temp_Humid_3\"};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+          "originatorId": "ebf471e0-9ced-11eb-9aa3-49a56be88c61",
+          "originatorType": "DEVICE"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 52,
+          "layoutY": 268
+        },
+        "type": "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode",
+        "name": "Soil Weights B",
+        "debugMode": false,
+        "configuration": {
+          "msgCount": 0,
+          "periodInSeconds": 300,
+          "jsScript": "var msg = {Soil_Temperature_B: (20 + 7 * Math.random()).toFixed(1),\n    Soil_Humidity_B: (30 + 10 * Math.random()).toFixed(1),\n    Soil_Weight_B: (40 + 10 * Math.random()).toFixed(1),\n};\nvar metadata = {dataType : \"Temp_Humid_1\"};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+          "originatorId": "ebf471e0-9ced-11eb-9aa3-49a56be88c61",
+          "originatorType": "DEVICE"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 51,
+          "layoutY": 209
+        },
+        "type": "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode",
+        "name": "Soil Weights A",
+        "debugMode": false,
+        "configuration": {
+          "msgCount": 0,
+          "periodInSeconds": 300,
+          "jsScript": "var msg = {Temperature: (25 + 7 * Math.random()).toFixed(1),\n    Humidity: (40 + 10 * Math.random()).toFixed(1),\n    Weight: (50 + 10 * Math.random()).toFixed(1),\n};\nvar metadata = {dataType : \"Temp_Humid_1\"};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+          "originatorId": "ebf471e0-9ced-11eb-9aa3-49a56be88c61",
+          "originatorType": "DEVICE"
+        }
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 418,
+          "layoutY": 10
+        },
+        "type": "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode",
+        "name": "Power",
+        "debugMode": false,
+        "configuration": {
+          "msgCount": 0,
+          "periodInSeconds": 300,
+          "jsScript": "var msg = {Power_A: (1000 + (Math.random() * 10)).toFixed(2),\nPower_B: (1500 + (Math.random() * 10)).toFixed(2),\nPower_C: (2000 + (Math.random() * 10)).toFixed(2)\n};\nvar metadata = {dataType : \"Air_Condition\"};\nvar msgType = \"POST_TELEMETRY_REQUEST\";\n\nreturn { msg: msg, metadata: metadata, msgType: msgType };",
+          "originatorId": "94667690-9cec-11eb-9aa3-49a56be88c61",
+          "originatorType": "DEVICE"
+        }
+      }
+    ],
+    "connections": null,
+    "ruleChainConnections": [
+      {
+        "fromIndex": 0,
+        "targetRuleChainId": {
+          "entityType": "RULE_CHAIN",
+          "id": "83afc000-9ce1-11eb-9aa3-49a56be88c61"
+        },
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 431,
+          "layoutY": 144,
+          "ruleChainNodeId": "rule-chain-node-21"
+        },
+        "type": "Success"
+      },
+      {
+        "fromIndex": 1,
+        "targetRuleChainId": {
+          "entityType": "RULE_CHAIN",
+          "id": "83afc000-9ce1-11eb-9aa3-49a56be88c61"
+        },
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 431,
+          "layoutY": 144,
+          "ruleChainNodeId": "rule-chain-node-21"
+        },
+        "type": "Success"
+      },
+      {
+        "fromIndex": 2,
+        "targetRuleChainId": {
+          "entityType": "RULE_CHAIN",
+          "id": "83afc000-9ce1-11eb-9aa3-49a56be88c61"
+        },
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 431,
+          "layoutY": 144,
+          "ruleChainNodeId": "rule-chain-node-21"
+        },
+        "type": "Success"
+      },
+      {
+        "fromIndex": 3,
+        "targetRuleChainId": {
+          "entityType": "RULE_CHAIN",
+          "id": "83afc000-9ce1-11eb-9aa3-49a56be88c61"
+        },
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 431,
+          "layoutY": 144,
+          "ruleChainNodeId": "rule-chain-node-21"
+        },
+        "type": "Success"
+      },
+      {
+        "fromIndex": 4,
+        "targetRuleChainId": {
+          "entityType": "RULE_CHAIN",
+          "id": "83afc000-9ce1-11eb-9aa3-49a56be88c61"
+        },
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 431,
+          "layoutY": 144,
+          "ruleChainNodeId": "rule-chain-node-21"
+        },
+        "type": "Success"
+      },
+      {
+        "fromIndex": 5,
+        "targetRuleChainId": {
+          "entityType": "RULE_CHAIN",
+          "id": "83afc000-9ce1-11eb-9aa3-49a56be88c61"
+        },
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 431,
+          "layoutY": 144,
+          "ruleChainNodeId": "rule-chain-node-21"
+        },
+        "type": "Success"
+      },
+      {
+        "fromIndex": 6,
+        "targetRuleChainId": {
+          "entityType": "RULE_CHAIN",
+          "id": "83afc000-9ce1-11eb-9aa3-49a56be88c61"
+        },
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 431,
+          "layoutY": 144,
+          "ruleChainNodeId": "rule-chain-node-21"
+        },
+        "type": "Success"
+      },
+      {
+        "fromIndex": 7,
+        "targetRuleChainId": {
+          "entityType": "RULE_CHAIN",
+          "id": "83afc000-9ce1-11eb-9aa3-49a56be88c61"
+        },
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 431,
+          "layoutY": 144,
+          "ruleChainNodeId": "rule-chain-node-21"
+        },
+        "type": "Success"
+      },
+      {
+        "fromIndex": 8,
+        "targetRuleChainId": {
+          "entityType": "RULE_CHAIN",
+          "id": "83afc000-9ce1-11eb-9aa3-49a56be88c61"
+        },
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 431,
+          "layoutY": 144,
+          "ruleChainNodeId": "rule-chain-node-21"
+        },
+        "type": "Success"
+      },
+      {
+        "fromIndex": 9,
+        "targetRuleChainId": {
+          "entityType": "RULE_CHAIN",
+          "id": "83afc000-9ce1-11eb-9aa3-49a56be88c61"
+        },
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 431,
+          "layoutY": 144,
+          "ruleChainNodeId": "rule-chain-node-21"
+        },
+        "type": "Success"
+      },
+      {
+        "fromIndex": 10,
+        "targetRuleChainId": {
+          "entityType": "RULE_CHAIN",
+          "id": "83afc000-9ce1-11eb-9aa3-49a56be88c61"
+        },
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 431,
+          "layoutY": 144,
+          "ruleChainNodeId": "rule-chain-node-21"
+        },
+        "type": "Success"
+      },
+      {
+        "fromIndex": 11,
+        "targetRuleChainId": {
+          "entityType": "RULE_CHAIN",
+          "id": "83afc000-9ce1-11eb-9aa3-49a56be88c61"
+        },
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 431,
+          "layoutY": 144,
+          "ruleChainNodeId": "rule-chain-node-21"
+        },
+        "type": "Success"
+      },
+      {
+        "fromIndex": 12,
+        "targetRuleChainId": {
+          "entityType": "RULE_CHAIN",
+          "id": "83afc000-9ce1-11eb-9aa3-49a56be88c61"
+        },
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 431,
+          "layoutY": 144,
+          "ruleChainNodeId": "rule-chain-node-21"
+        },
+        "type": "Success"
+      },
+      {
+        "fromIndex": 13,
+        "targetRuleChainId": {
+          "entityType": "RULE_CHAIN",
+          "id": "83afc000-9ce1-11eb-9aa3-49a56be88c61"
+        },
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 431,
+          "layoutY": 144,
+          "ruleChainNodeId": "rule-chain-node-21"
+        },
+        "type": "Success"
+      },
+      {
+        "fromIndex": 14,
+        "targetRuleChainId": {
+          "entityType": "RULE_CHAIN",
+          "id": "83afc000-9ce1-11eb-9aa3-49a56be88c61"
+        },
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 431,
+          "layoutY": 144,
+          "ruleChainNodeId": "rule-chain-node-21"
+        },
+        "type": "Success"
+      },
+      {
+        "fromIndex": 15,
+        "targetRuleChainId": {
+          "entityType": "RULE_CHAIN",
+          "id": "83afc000-9ce1-11eb-9aa3-49a56be88c61"
+        },
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 431,
+          "layoutY": 144,
+          "ruleChainNodeId": "rule-chain-node-21"
+        },
+        "type": "Success"
+      },
+      {
+        "fromIndex": 16,
+        "targetRuleChainId": {
+          "entityType": "RULE_CHAIN",
+          "id": "83afc000-9ce1-11eb-9aa3-49a56be88c61"
+        },
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 431,
+          "layoutY": 144,
+          "ruleChainNodeId": "rule-chain-node-21"
+        },
+        "type": "Success"
+      },
+      {
+        "fromIndex": 17,
+        "targetRuleChainId": {
+          "entityType": "RULE_CHAIN",
+          "id": "83afc000-9ce1-11eb-9aa3-49a56be88c61"
+        },
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 431,
+          "layoutY": 144,
+          "ruleChainNodeId": "rule-chain-node-21"
+        },
+        "type": "Success"
+      },
+      {
+        "fromIndex": 18,
+        "targetRuleChainId": {
+          "entityType": "RULE_CHAIN",
+          "id": "83afc000-9ce1-11eb-9aa3-49a56be88c61"
+        },
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 431,
+          "layoutY": 144,
+          "ruleChainNodeId": "rule-chain-node-21"
+        },
+        "type": "Success"
+      }
+    ]
+  }
+}
