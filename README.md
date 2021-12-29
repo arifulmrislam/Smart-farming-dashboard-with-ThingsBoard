@@ -39,7 +39,7 @@ I also created alarm and notification for demo dashboard using ThingsBoard rule 
   
 ## Smart Farming Dashboard
 
-<img src= "Silos monitoring demo dashboard.png" width=800>
+<img src= "Silos monitoring demo dashboard.png" width=1000>
 
 Live Demo: [Smart Farming Dashboard](https://myiot.polisea.ro/dashboard/5d8810b0-057a-11ec-9fc0-d7ec4e17a89a?publicId=7cb71a20-041d-11ec-9fc0-d7ec4e17a89a)
 
