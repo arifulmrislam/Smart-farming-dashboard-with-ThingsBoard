@@ -1,5 +1,5 @@
 # Smart-farming-dashboard-ThingsBoard
-Smart farming and smart agriculture solutions
+## Smart farming and smart agriculture solutions
 
 ## Overview
 
@@ -21,6 +21,12 @@ f. The platform provides production ready server infrastructure to connect your 
 
 <img src= "Random data generate.png" width=800>
 
+## Root rule chain,
+
+I use root rule chain to sending data to the Latest telemetry.
+
+<img src= "root_rule_chain.png" width=800>
+
 ## Alarm and Notification
 
 I also created alarm and notification for demo dashboard using ThingsBoard rule chains.
@@ -31,11 +37,11 @@ I also created alarm and notification for demo dashboard using ThingsBoard rule 
 
 <img src= "Random Values.png" width=800>
   
-## Smart farming dashboard
+## Smart Farming Dashboard
 
 <img src= "Silos monitoring demo dashboard.png" width=800>
 
-Live Demo: [Smart Farming Demo Dashboard](https://myiot.polisea.ro/dashboard/5d8810b0-057a-11ec-9fc0-d7ec4e17a89a?publicId=7cb71a20-041d-11ec-9fc0-d7ec4e17a89a)
+Live Demo: [Smart Farming Dashboard](https://myiot.polisea.ro/dashboard/5d8810b0-057a-11ec-9fc0-d7ec4e17a89a?publicId=7cb71a20-041d-11ec-9fc0-d7ec4e17a89a)
 
 Visit our official website: [Polisea S.A](https://polisea.ro/aiot/) 
 
