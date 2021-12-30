@@ -1,4 +1,4 @@
-# Smart-farming-dashboard-ThingsBoard
+# Smart-farming-dashboard-with-ThingsBoard
 ## Smart farming and smart agriculture solutions
 
 ## Overview
